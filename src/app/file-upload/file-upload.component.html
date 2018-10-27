@@ -1,0 +1,118 @@
+
+<div class="container" style="margin-top:80px">
+  <div class="row">
+      
+
+      <div class="col-md-12">
+        
+      <div class="m-portlet">
+          <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                  <div class="m-portlet__head-title">
+                      <h3 class="m-portlet__head-text" style="color: #8843a0;">
+                          <i class="fa fa-upload" style="font-size: 24px; color: #c272de;"></i>
+                          &nbsp;Upload File
+                      </h3>
+                  </div>
+              </div>
+          </div>
+          <div class="m-portlet__body">
+              
+              <div class="m-section">
+                  <span class="m-section__sub">
+  
+                          <div class="row ">
+                                  <div class="form-group">
+                                  <!-- <label for="file">Choose File</label> -->
+                                  <input type="file"  id="file"  style="border: 1px solid #d176a6;" (change)="handleFileInput($event.target.files)" >
+                                  </div>
+                          </div>
+                         
+                      <!-- <div class="row form-group"></div>
+                           <div class="row" style="margin-top: 20px;"></div> -->
+    
+    <div class="row ">
+         
+      <div class="table table-light" style="width: 100%">
+          <table class="table table-hover table-light">
+              <thead style="background-color: #dedbe6;">
+                  <tr class="uppercase">
+                      <th style="width: 38%;text-align: center;color: black;">Name</th>
+                      <th style="text-align:center;color: black;">Size</th>
+                      <!-- <th style="text-align:center;color: black;">Progress</th> -->
+                      <th style="text-align:center;color: black;">Status</th>
+                      <th style="text-align:center;color: black;">Actions</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor= "let upload of uploadDetails; let i = index">
+                      <td style="text-align:center">{{upload.name}}</td>
+                      <td style="text-align:center">{{bytesToSize(upload.size)}}</td>
+                      <!-- <td style="text-align:center">{{upload.progress}}</td> -->
+                      <td style="text-align:center">{{upload.status}}</td> 
+                      <td style="text-align:center">
+                          <button type="button" title="Upload" class="btn btn-success btn-s" (click)="uploadUpload(uploadDetails)" [disabled]="disableUpload">
+                              <span class="glyphicon glyphicon-upload"></span> <i class="fa fa-upload"></i>Upload </button>
+                          <button type="button" title="Cancel" class="btn btn-warning btn-s" (click)="cancelUpload()" [disabled]="disableCancel">
+                              <span class="glyphicon glyphicon-ban-circle"></span> <i class="fa fa-minus-circle"></i>Cancel </button>
+                          <button type="button" title="Remove" class="btn btn-danger btn-s" (click)="clearUpload(uploadDetails,i)" [disabled]="disableRemove">
+                              <span class="glyphicon glyphicon-trash"></span> <i class="fa fa-remove"></i>Remove</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      
+  </div>
+  
+  <div class="row ">
+          <!-- <div class="form-group"> -->
+      <!-- <div>
+          <p>Queue progress:</p>
+          <div class="progress progress-sm" style="">
+              <div class="progress-bar progress-bar-info" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }" style="width: 0%;"></div>
+          </div>
+      </div> -->
+      <!-- </div> -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let header of displayedColumns">{{header}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of dataSource; index as i">
+            <th scope="row" *ngFor="let header of displayedColumns" >{{data[header]}}</th>
+          </tr>
+         
+        </tbody>
+      </table>
+      
+   </div>   
+  
+   <!-- <div class="row ">
+          <div class="form-group">
+  
+      
+          </div>
+  </div> -->
+                      
+                   </span>
+                  
+              
+              </div>
+                                
+           
+          
+      </div>
+  
+    
+    
+      
+  </div>
+            
+  </div>
+  
+  
+  </div>
+  </div>
