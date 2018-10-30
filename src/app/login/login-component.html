@@ -1,8 +1,33 @@
 
 <div class="container" style="margin-top:80px">
-  <div class="row">
-<p>
-  login-component works!
-</p>
-</div>
+      <div class="row" class="alighn">      
+        
+        <form class="form-container" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div clss="login-container">
+            <div class="form-group">
+                <mat-form-field class="inputLength" appearance="legacy">
+                    <input matInput formControlName="userName" placeholder="User Name">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                  </mat-form-field>
+                 
+          <!-- <label>
+            User Name:
+            <input type="text" class="form-control" formControlName="userName" required>
+          </label> -->
+        </div>
+        <div class="form-group">
+
+            <mat-form-field class="inputLength">
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" placeholder="password">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field>
+        <!-- <label>
+           Password:
+            <input type="password" class="form-control" formControlName="password">
+          </label> -->
+          </div>
+        </div>
+          <button type="submit"  class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+        </form>
+    </div>
 </div>

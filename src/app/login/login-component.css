@@ -1,0 +1,17 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-container > * {
+    width: 100%;
+  }
+  .form-container {
+    padding: 2% 36%;
+  }
+  .inputLength {
+    width: 280px;
+  }
+  .alighn {
+      text-align: center
+  }
