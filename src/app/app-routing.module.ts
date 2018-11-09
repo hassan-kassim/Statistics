@@ -9,7 +9,8 @@ import { AuthGuard } from './login/_guard/auth_Guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  { path: 'dashboard', component: DashboardComponent,canActivate: [AuthGuard] },
+  // { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'uploadData', component: FileUploadComponent },
   { path: 'statsticalConstitution', component: ViewStatisticsComponent },
   { path: 'Login', component: LoginComponent }

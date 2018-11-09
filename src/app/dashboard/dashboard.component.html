@@ -1,3 +1,8 @@
-<p>
-  dashboard works!
-</p>
+<div class="container" style="margin-top:80px">
+  <div class="row">
+TensorFlow says {{ prediction }}
+
+<input type="number" (change)="predict($event.target.value)">
+
+</div>
+</div>
