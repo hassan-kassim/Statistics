@@ -57,7 +57,7 @@ uploadBase64File(base64Value, mimeType, fileName){
           "fileName":fileName,
           "mime":mimeType,
           };
-     
+
   console.log("base64data",baseTotalValue);
   //var dataconf = encode(baseTotalValue);
   //console.log("dataconf",dataconf);
@@ -74,38 +74,38 @@ uploadBase64File(base64Value, mimeType, fileName){
 
 
 
-uploadUpload(uploadDetails){
+uploadUpload(uploadDetails) {
 
-  console.log("uploadDetails",uploadDetails);
+  console.log('uploadDetails', uploadDetails);
   let mimeType = uploadDetails[0].type.split('/');
-  let fileName =uploadDetails[0].name;
-  console.log("mimeType",mimeType);
+  let fileName = uploadDetails[0].name;
+  console.log('mimeType', mimeType);
 
  // var xlsxJson = getXlsxData(uploadDetails[0]);
- 
-  
-  let reader = new FileReader();
+
+
+  const reader = new FileReader();
 
   reader.onloadend = (e) => {
       this.base64Value = reader.result;
-      console.log("this.base64Value",this.base64Value);
-      var xlsxJson = getXlsxDatas(this.base64Value);
-      console.log("xlsxJson",xlsxJson);
+      console.log('this.base64Value', this.base64Value);
+      const xlsxJson = getXlsxDatas(this.base64Value);
+      console.log('xlsxJson', xlsxJson);
       this.dataSource = xlsxJson.Values;
       this.displayedColumns = xlsxJson.header;
       this.uploadBase64File(this.base64Value, mimeType[1], fileName);
-    }
+    };
 
-  //reader.readAsDataURL(uploadDetails[0]) //url mode base 64 value
-  //reader.readAsText(uploadDetails[0]) //ASCII
-  reader.readAsBinaryString(uploadDetails[0])
-          
+  // reader.readAsDataURL(uploadDetails[0]) //url mode base 64 value
+  // reader.readAsText(uploadDetails[0]) //ASCII
+  reader.readAsBinaryString(uploadDetails[0]);
+
 }
 
-clearUpload(uploadDetails, index):void {
-  console.log("index",index)
+clearUpload(uploadDetails, index): void {
+  console.log('index', index);
   uploadDetails.splice(index, 1);
-  (<HTMLInputElement>document.getElementById("file")).value = "";
+  (<HTMLInputElement>document.getElementById('file')).value = '';
  // this.toasterService.pop('success', '', 'File Removed');
 }
 

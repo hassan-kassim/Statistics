@@ -4,13 +4,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
-import { headerNavComponent } from '../app/headerBar/headerBar.component';
-
 import { AppComponent } from './app.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { FileUploadComponent } from './file-upload/file-upload.component';
-import { ViewStatisticsComponent } from './view-statistics/view-statistics.component';
 // import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -53,17 +48,17 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import { ThemeModuleModule} from './theme-module/theme-module.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    headerNavComponent,
-    SideBarComponent,
-    DashboardComponent,
-    FileUploadComponent,
-    ViewStatisticsComponent,
-    LoginComponent
+    // headerNavComponent,
+    // SideBarComponent,
+    LoginComponent,
+    // ThemeComponentComponent
+    // ThemeComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -110,6 +105,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    // ThemeModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
